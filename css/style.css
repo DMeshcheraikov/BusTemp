@@ -69,8 +69,8 @@ a:focus {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
 
-.slick-slider:focus {
-  outline-style: none; }
+.slick-slide:focus, .slick-slide a {
+  outline: none; }
 
 .bg-grid .bg-grid__col, .testimonial-grid .testimonial-grid__col {
   margin: 0 auto; }
@@ -284,28 +284,6 @@ html {
       .preview-block__text {
         max-width: 535px; } }
 
-.buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  margin-top: 33px; }
-  .buttons__button + .buttons__button {
-    margin-left: 10px; }
-    @media (max-width: 640px) {
-      .buttons__button + .buttons__button {
-        margin-left: 0;
-        margin-top: 10px; } }
-
 .button {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -330,13 +308,38 @@ html {
   -webkit-transition: 0.2s;
   transition: 0.2s; }
   .button:hover {
-    background-color: #2095bc 0.85; }
+    background-color: #26afdd; }
   .button_transparent {
     background-color: transparent;
     border: 1px solid #fff; }
     .button_transparent:hover {
       color: #000;
       background-color: #fff; }
+
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  margin-top: 33px; }
+  .buttons__button:hover {
+    color: black;
+    border: 1px solid black; }
+  .buttons__button + .buttons__button {
+    margin-left: 10px; }
+    @media (max-width: 640px) {
+      .buttons__button + .buttons__button {
+        margin-left: 0;
+        margin-top: 10px; } }
 
 .promo-grid {
   display: -webkit-box;
@@ -389,31 +392,13 @@ html {
               flex-grow: 1; } }
 
 .bg-grid {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  margin: -15px; }
-  .bg-grid__col {
-    padding: 15px; }
-.bg-grid {
   position: relative;
   display: block;
   padding-top: 45px;
   padding-bottom: 15px; }
-  .bg-grid__col {
-    margin: 5px; }
 .bg-block {
-  padding: 75px 0;
+  padding-top: 75px;
+  padding-bottom: 75px;
   background-color: white; }
   .bg-block__title {
     font-size: 30px;
@@ -437,9 +422,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 225px;
-  width: 100%;
-  min-width: 225px;
+  width: 225px;
   background-color: grey;
   border-radius: 6px;
   background-image: -webkit-gradient(linear, left top, left bottom, from(lightgrey), to(white));
@@ -780,13 +763,17 @@ html {
   font-size: 12px;
   color: #fff;
   background-image: radial-gradient(#363c39, #4f5765);
-  border-radius: 4px;
+  border-radius: 15px;
   border: 1px;
   color: #a9afb6;
   -webkit-transition: 0.3s;
   transition: 0.3s; }
   .button_grad:hover {
-    border: solid 2px #7e848e;
+    cursor: pointer;
+    border: solid 1px #7e848e;
+    border-radius: 4px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
     background-image: radial-gradient(#686a6d, #798ca9); }
 
 @media (max-width: 1110px) {
@@ -857,19 +844,20 @@ html {
                 transform: rotate(405deg);
         width: 30px;
         -webkit-transition: 1s;
-        transition: 1s; }
+        transition: 1s;
+        background-color: #7e848e; }
       .burger-menu_active .burger-menu__lines:after {
         top: 0;
         -webkit-transform: rotate(-405deg);
                 transform: rotate(-405deg);
         width: 30px;
         -webkit-transition: 1s;
-        transition: 1s; }
+        transition: 1s;
+        background-color: #7e848e; }
     .burger-menu_active .burger-menu__button {
       width: 120px;
       right: 7px;
-      -webkit-transition: 2s;
-      transition: 2s; }
+      background-color: black; }
     .burger-menu__nav {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -883,7 +871,7 @@ html {
       top: 0;
       right: 0;
       padding: 40px 15px 20px 15px;
-      background-color: #7e848e;
+      background-color: black;
       z-index: 20;
       overflow: scroll;
         overflow-x: hidden;

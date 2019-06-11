@@ -65,15 +65,8 @@
 		line-height: 2
 		margin-top: 20px
 
-.buttons
-	@include flex
-	margin-top: 33px
-	&__button
-		& + &
-			margin-left: 10px
-			@media (max-width: nth($mediaBp, 3))
-				margin-left: 0
-				margin-top: 10px
+
+			
 
 .button
 	@include flex($jc: center, $ai: center)
@@ -86,14 +79,25 @@
 	border-radius: 6px
 	transition: .2s
 	&:hover
-		background-color: $mainC1 .85
+		background-color: $mainC1/.85
 	&_transparent
 		background-color: transparent
 		border: 1px solid #fff
 		&:hover
 			color: #000
 			background-color: #fff
-
+.buttons
+	@include flex
+	margin-top: 33px
+	&__button
+		&:hover
+			color: black
+			border: 1px solid black
+		& + &
+			margin-left: 10px		
+			@media (max-width: nth($mediaBp, 3))
+				margin-left: 0
+				margin-top: 10px
 
 .promo
 	@include grid($s: 5px)
@@ -125,16 +129,15 @@
 				&:nth-child(2)
 					flex-grow: 1
 .bg	
-	@include grid
 	&-grid
 		position: relative
 		display: block
 		padding-top: 45px
 		padding-bottom: 15px
 		&__col
-			margin: 5px
 	&-block
-		padding: 75px 0
+		padding-top: 75px
+		padding-bottom: 75px
 		background-color: white
 		&__title
 			font-size: 30px
@@ -147,9 +150,7 @@
 			font-weight: normal			 
 	&-items
 		@include flex($jc: space-around, $fd: column, $ai: center)
-		max-width: 225px
-		width: 100%
-		min-width: 225px
+		width: 225px
 		background-color: grey
 		border-radius: 6px
 		background-image: linear-gradient(lightgrey, white)
@@ -359,12 +360,15 @@
 		font-size: 12px
 		color: #fff
 		background-image: radial-gradient(#363c39, #4f5765	)
-		border-radius: 4px
+		border-radius: 15px
 		border: 1px
 		color: #a9afb6
 		transition: .3s
 		&:hover
-			border: solid 2px $mainC3
+			cursor: pointer
+			border: solid 1px $mainC3
+			border-radius: 4px
+			transition: .5s
 			background-image: radial-gradient(#686a6d, #798ca9)
 
 	
@@ -439,15 +443,17 @@
 					transform: rotate(405deg)
 					width: 30px
 					transition: 1s
+					background-color: $mainC3
 				&:after
 					top: 0
 					transform: rotate(-405deg)
 					width: 30px
 					transition: 1s
+					background-color: $mainC3
 			& .burger-menu__button
 				width: 120px
-				right: 7px
-				transition: 2s
+				right: 7px			
+				background-color: black
 
 		&__nav
 			display: flex
@@ -457,7 +463,7 @@
 			top: 0
 			right: 0
 			padding: 40px 15px 20px 15px
-			background-color: $mainC3
+			background-color: black
 			z-index: 20
 			overflow: scroll
 				x: hidden
@@ -484,6 +490,7 @@
 				cursor: pointer
 				filter: brightness(.5)
 		&__button 
+			
 			position: fixed
 			top: 7px
 			right: 13px

@@ -35,13 +35,6 @@ $(document).ready(function () {
 			{
 				breakpoint: 1120,
 				settings: {
-					slidesToShow: 3,
-					dots: true
-				}
-			},
-			{
-				breakpoint: 780,
-				settings: {
 					slidesToShow: 2,
 					slidesToScroll: 2,
 					dots: true

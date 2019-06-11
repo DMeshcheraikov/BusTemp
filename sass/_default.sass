@@ -41,7 +41,7 @@ a
 	text-decoration: none
 	cursor: pointer 
 
-	
+
 html 
 	-webkit-text-size-adjust: 100%
 	font-family: sans-serif
@@ -59,8 +59,9 @@ a:focus
 *, *:before, *:after, input, textarea, button, select 
 	box-sizing: border-box 
 
-.slick-slider:focus
-	outline-style: none
+.slick-slide
+	&:focus, a 
+		outline: none
 
 .bg-grid .bg-grid__col, .testimonial-grid .testimonial-grid__col
 	margin: 0 auto
