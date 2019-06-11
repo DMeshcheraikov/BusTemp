@@ -1,0 +1,47 @@
+// ============================
+// MAIN COLORS
+// ============================
+
+$mainC1: #2095bc //blue
+$mainC2: #3e434a //grey
+$mainC3: #7e848e //lightgrey
+
+// ============================
+// MEDIA
+// ============================
+
+$mediaBp: (1110px,  767px, 640px, 480px)
+
+// ============================
+// SOCIAL COLORS
+// ============================
+
+$socCol: (telegram: #61A8DE, viber: #8351B6, whatsapp: #12b54f)
+
+@each $name, $color in $socCol
+	.soc_#{$name}
+		color: $color
+
+// ============================
+// MIXINS
+// ============================
+
+@mixin flex ($d: flex, $jc: flex-start, $fw: nowrap, $ai: stretch, $fd: row)
+	display: $d
+	flex-flow: $fd $fw
+	justify-content: $jc
+	align-items: $ai
+
+
+@mixin grid ($s: 15px)
+	&-grid
+		@include flex($fw: wrap)
+		margin: -#{$s}
+		&__col
+			padding: $s
+
+@mixin text ($mt, $fs, $lh, $c)
+	margin-top: $mt+px 
+	font-size: $fs+px
+	line-height: $lh+em 
+	color: $c

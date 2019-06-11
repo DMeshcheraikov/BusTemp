@@ -1,0 +1,146 @@
+// ============================
+// RESETS
+// ============================
+table, thead, tbody, tfoot, tr, th, td 
+	margin: 0
+	padding: 0
+	border: none
+	border-collapse: inherit
+	border-spacing: 0
+	border-color: inherit
+	vertical-align: inherit
+	font-weight: inherit
+	-webkit-border-horizontal-spacing: 0
+	-webkit-border-vertical-spacing: 0 
+
+*, *:before, *:after
+	margin: 0
+	padding: 0 
+
+h3
+	font-family: "HelveticaNeue"
+	font-weight: bold
+	font-size: 30px
+h2
+	font-family: "HelveticaNeue"
+	font-weight: bold
+	font-size: 36px
+h4
+	font-family: "HelveticaNeue"
+	font-weight: normal
+	font-size: 24px
+
+input 
+	border-radius: 0
+	box-shadow: none !important 
+
+ul, ol 
+	list-style-type: none 
+
+a 
+	text-decoration: none
+	cursor: pointer 
+
+	
+html 
+	-webkit-text-size-adjust: 100%
+	font-family: sans-serif
+	color: $mainC2
+
+input:focus,
+label:focus,
+textarea:focus,
+select:focus,
+option:focus,
+button:focus,
+a:focus 
+	outline: none 
+
+*, *:before, *:after, input, textarea, button, select 
+	box-sizing: border-box 
+
+.slick-slider:focus
+	outline-style: none
+
+.bg-grid .bg-grid__col, .testimonial-grid .testimonial-grid__col
+	margin: 0 auto
+
+.slick-track
+	display: flex
+
+.slick-dots li button
+	border: 5px solid $mainC3
+	border-radius: 50%
+	margin-right: 5px
+	margin-left: 5px
+	background: white
+	width: 20px
+	height: 20px
+	font-size: 0
+	&:hover, &:focus,
+		background: $mainC3
+.slick
+	&-dots
+		bottom: 0
+		left: 50%
+		margin-right: -50%
+		transform: translate(-50%, -50%)
+		position: relative
+		bottom: -30px
+		@include flex($jc: center)
+	&-arrow
+		position: absolute
+		top: 50%
+		transform: translate(0, -50%)
+		font-size: 0
+		z-index: 10
+		border: transparent
+		background-color: transparent
+		&:before
+			@include flex($jc: center, $ai: center)
+			width: 1em
+			height: 1em
+			font-family: "Font Awesome 5 Free"
+			font-weight: 600
+			font-size: 1.5rem
+			background-color: transparent
+	&-prev
+		left: 0
+		&:before
+			content: '\f104'
+	&-next
+		right: 0
+		&:before
+			content: '\f105'
+
+
+
+
+// ============================
+// FONTS
+// ============================
+
+@font-face
+	font:
+		family: "HelveticaNeue"
+		weight: normal
+		style: normal
+	src: url('../fonts/helvetica-neue/HelveticaNeue.ttf') format("truetype")
+
+@font-face
+	font:
+		family: "HelveticaNeue"
+		weight: bold
+		style: normal
+	src: url('../fonts/helvetica-neue/HelveticaNeueBd.ttf') format("truetype")
+
+@font-face
+	font:
+		family: "HelveticaNeue"
+		weight: lighter
+		style: normal
+	src: url('../fonts/helvetica-neue/HelveticaNeueLt.ttf') format("truetype")
+
+html
+	font-family: "HelveticaNeue"
+

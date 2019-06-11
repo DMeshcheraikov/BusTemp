@@ -1,0 +1,649 @@
+@import "_options"
+@import "_default"
+
+// ============================
+// MAIN CODE START
+// ============================
+
+.container
+	width: 100%
+	max-width: nth($mediaBp, 1)
+	padding:
+		left: 10px
+		right: 10px
+	margin:
+		left: auto
+		right: auto
+	&_preview
+		padding-top: 200px 
+		padding-bottom: 160px
+		background-image: linear-gradient (to left, #000, rgba(#fff, .3), #000)
+		box-shadow: inset 0 93px 0 #000, inset 0 -93px 250px 0 #000
+	&_startYourTrial
+		@include flex($fd: column, $ai: center)
+
+.header
+	@include grid
+	padding: 40px 0
+	position: absolute
+	top: 0
+	right: 0
+	left: 0
+	&-grid
+		@include flex($jc: space-between, $ai: center)
+
+.nav
+	&-list
+		@include flex
+		li + li
+			margin-left: 20px
+		&__link
+			@include text(0, 15, 1, #fff)
+			&:hover
+				text-decoration: underline
+
+.burger-menu__nav, .burger-menu
+	display: none
+
+.logo
+	font-size: 21px
+	font-weight: bold
+	text-transform: uppercase
+	color: #fff
+		
+.preview-block
+	background-color: #000
+	color: #fff
+	&__title
+		@media (min-width: nth($mediaBp, 2) + 1)
+			max-width: 535px
+		font-size: 48px
+	&__text
+		@media (min-width: nth($mediaBp, 2) + 1)
+			max-width: 535px
+		font-size: 18px
+		line-height: 2
+		margin-top: 20px
+
+.buttons
+	@include flex
+	margin-top: 33px
+	&__button
+		& + &
+			margin-left: 10px
+			@media (max-width: nth($mediaBp, 3))
+				margin-left: 0
+				margin-top: 10px
+
+.button
+	@include flex($jc: center, $ai: center)
+	width: 175px
+	height: 50px
+	font-size: 16px
+	color: #fff
+	text-transform: capitalize
+	background-color: $mainC1
+	border-radius: 6px
+	transition: .2s
+	&:hover
+		background-color: $mainC1 .85
+	&_transparent
+		background-color: transparent
+		border: 1px solid #fff
+		&:hover
+			color: #000
+			background-color: #fff
+
+
+.promo
+	@include grid($s: 5px)
+	&-block
+		padding: 50px 0
+		background-color: #F7F8FA
+		border-bottom: 1px solid #ebedf0
+		&__title
+			font-size: 24px
+		&__text
+			margin-top: 20px
+			font-size: 14px
+			line-height: 1.5
+			color: $mainC3
+		@media (min-width: nth($mediaBp, 4) - 1)
+			&__img
+				display: block
+				width: 100%
+				margin: auto
+				margin-top: -20%
+	@media (min-width: nth($mediaBp, 3) + 1)
+		&-grid
+			flex-wrap: nowrap
+			align-items: center
+			&__col
+				&:nth-child(1)
+					width: 385px
+					flex-shrink: 0
+				&:nth-child(2)
+					flex-grow: 1
+.bg	
+	@include grid
+	&-grid
+		position: relative
+		display: block
+		padding-top: 45px
+		padding-bottom: 15px
+		&__col
+			margin: 5px
+	&-block
+		padding: 75px 0
+		background-color: white
+		&__title
+			font-size: 30px
+			text-align: center
+		&__text
+			font-size: 21px
+			margin-top: 35px
+			text-align: center
+			font-family: HelveticaNeue
+			font-weight: normal			 
+	&-items
+		@include flex($jc: space-around, $fd: column, $ai: center)
+		max-width: 225px
+		width: 100%
+		min-width: 225px
+		background-color: grey
+		border-radius: 6px
+		background-image: linear-gradient(lightgrey, white)
+		position: relative
+		&:hover
+			cursor: help
+		&:after
+			content: ""
+			position: absolute
+			top: 1px
+			left: 1px
+			right: 1px
+			bottom: 0
+			background-color: #fff
+			border-radius: 6px	
+			z-index: 1
+		&__icon
+			margin-top: 28px
+			font-size: 75px
+			z-index: 2
+		&__title
+			font-size: 17px
+			margin-top: 35px
+			max-width: 175px
+			text-align: center
+			z-index: 2
+		&__text
+			font-size: 14px
+			margin-top: 15px
+			max-width: 175px
+			text-align: center
+			z-index: 2
+		&__button
+			@include flex($jc: center, $ai: center)
+			width: 108px
+			height: 35px
+			font-size: 16px
+			color: grey
+			text-transform: capitalize
+			border-radius: 6px
+			transition: .2s
+			border-color: $mainC3
+			z-index: 2
+			margin: 0 auto
+			background-color: white
+			margin-bottom: 10px
+			margin-top: 25px
+			&:hover
+				background-color: $mainC3
+			&_transparent
+				background-color: transparent
+				border: 1px solid #fff
+				&:hover
+					color: #000
+					background-color: #000
+
+.testimonial
+	&-block
+		background-color: #f7f8fa
+		height: 420px
+	&__title
+		text-align: center
+		padding-top: 50px
+	@include grid($s: 60px)
+	&-grid
+		display: block	
+		margin-top: 1px
+		&__col
+			padding-bottom: 30px
+	&-items
+		&__speechBubble
+			@include flex ($ai: center)
+			position: relative
+			width: 280px
+			max-width: 280px
+			height: 100px
+			max-height: 100px
+			text-align: center
+			line-height: 1,5em
+			background-color: #fff
+			border: 1px solid white
+			border-radius: 5px
+			box-shadow: 1px 0 5px 5px rgba(0, 0, 0, 0.04)
+			&:before
+				content: ' '
+				position: absolute
+				width: 0
+				height: 0
+				left: 25px
+				top: 99px
+				border: 10px solid 
+				border-color: white transparent transparent white
+				font-size: 0
+			&:after
+				content: ' '
+				position: absolute 
+				width: 0 
+				height: 0
+				left: 26px
+				top: 97px
+				border: 10px solid
+				border-color: #fff transparent transparent #fff
+				font-size: 0
+		&-avatar
+			@include flex ($ai: center)
+			padding-top: 30px
+			&__foto
+				height: 50px
+				width: 50px
+				clip-path: circle(50% at 50% 50%)
+			&__person
+				padding-left: 10px
+				font-size: 12px
+				max-width: 220px
+	
+.email
+	&_pointed
+		cursor: pointer
+		color: blue
+		font-size: 12px
+		transition-property: font-size
+		&:hover
+			font-size: 13px
+
+.startYourTrial
+	&__title
+		margin-top: 85px
+		text-align: center
+	&__text
+		margin-top: 30px
+		text-align: center
+	&-block
+		background-color: $mainC1
+		height: 330px
+		height: 100%
+	&__button
+		@include flex($jc: center, $ai: center)
+		margin-top: 35px
+		margin-bottom: 95px
+		width: 175px
+		height: 50px
+		font-size: 16px
+		color: white
+		text-transform: capitalize
+		background-color: $mainC1
+		border-radius: 6px
+		border: 1px solid white
+		transition: .2s
+		&:hover
+			background-color: $mainC1
+
+.footer
+	background-color: $mainC2
+	@include grid($s: 25px)
+	&-grid
+		justify-content: space-between
+	&-items
+		@include flex($fd: column)
+		&__title
+			color: #a9afb6
+			padding-bottom: 38px
+		&__text
+			max-width: 305px
+			font-size: 13px
+			font-family: HelveticaNeue
+			font-weight: normal
+			color: $mainC3			
+		&__list
+			@include flex($fd: column)
+			&_link
+				font-size: 13px
+				font-family: HelveticaNeue
+				font-weight: normal
+				color: $mainC3
+		&__form
+			@include flex
+	&__strike
+		border: .5px solid $mainC3
+		margin-top: 80px
+	&__rights
+		padding-top: 25px
+		padding-bottom: 35px
+		position: relative
+		padding-left: 5px
+		font-size: 13px
+		color: $mainC3
+			
+.inputText
+	margin-top: 20px
+	border: 1px solid #fff
+	border-radius: 4px
+	background: #fff
+	width: 200px
+	height: 32px
+	color: $mainC3
+	margin-right: 10px
+	&:focus
+		border: 3px solid lightgrey
+		color: black
+
+.button
+	&_grad
+		@include flex($jc: center, $ai: center)
+		width: 88px
+		margin-top: 21px
+		height: 30px
+		font-size: 12px
+		color: #fff
+		background-image: radial-gradient(#363c39, #4f5765	)
+		border-radius: 4px
+		border: 1px
+		color: #a9afb6
+		transition: .3s
+		&:hover
+			border: solid 2px $mainC3
+			background-image: radial-gradient(#686a6d, #798ca9)
+
+	
+// ============================
+// MAIN CODE END
+// ============================
+
+@for $i from 1 to length($mediaBp)
+	@media (max-width: nth($mediaBp, $i))
+		.container
+			max-width: nth($mediaBp, $i + 1)
+
+// ============================
+// MEDIA QUARIES
+// ============================
+
+@media (max-width: nth($mediaBp, 1))
+	.features
+		&-grid 
+			justify-content: center
+			padding-left: 35px
+			padding-right: 35px
+		&-item
+			width: 100%
+			max-width: 230px
+			margin-left: auto
+			margin-right: auto
+	.slider
+		&__toggle 
+			&:nth-of-type(4)
+				display: block				
+
+	.footer
+		&-grid 
+			flex-wrap: wrap
+		&-items
+			&__form
+				width: 80%
+
+
+@media (max-width: nth($mediaBp, 2))
+	.container
+		&_preview
+			padding-bottom: 80px	
+	.header
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		background-color: #000
+		padding: 10px 0
+		z-index: 50		
+		&-grid
+			justify-content: center
+	.nav
+		display: none
+
+	.burger-menu
+		display: block
+		&_active 
+			& .burger-menu__nav
+				right: 0
+			& .burger-menu__overlay
+				display: block
+			& .burger-menu__lines
+				background-color: transparent
+				transform: translate(0,0)
+				right: 0
+				padding-left: 28px
+				&:before
+					top: 0
+					transform: rotate(405deg)
+					width: 30px
+					transition: 1s
+				&:after
+					top: 0
+					transform: rotate(-405deg)
+					width: 30px
+					transition: 1s
+			& .burger-menu__button
+				width: 120px
+				right: 7px
+				transition: 2s
+
+		&__nav
+			display: flex
+			flex-flow: column
+			position: fixed
+			border-radius: 0 0 0 15px
+			top: 0
+			right: 0
+			padding: 40px 15px 20px 15px
+			background-color: $mainC3
+			z-index: 20
+			overflow: scroll
+				x: hidden
+				y: auto
+			right: -100%
+			transition: .5s
+		&__overlay
+			display: none
+			position: fixed
+			top: 0
+			left: 0
+			width: 100vw
+			height: 100vh
+			z-index: 15
+		&__link
+			width: 100px
+			font-size: 18px
+			font-weight: bold
+			letter-spacing: .2em
+			line-height: 2em
+			color: $mainC1 / .7
+			text-decoration: none
+			&:hover
+				cursor: pointer
+				filter: brightness(.5)
+		&__button 
+			position: fixed
+			top: 7px
+			right: 13px
+			z-index: 30
+			width: 60px
+			height: 30px
+			border-radius: 10%
+			background-color: $mainC3
+			&:hover
+				cursor: pointer
+		&__lines
+			width: 50px
+			height: 4px		
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			background-color: black
+			&:after
+				position: absolute
+				content: ''
+				top: 7px
+				width: 50px
+				height: 4px
+				background-color: black			
+			&:before
+				position: absolute
+				content: ''
+				top: -7px
+				width: 50px
+				height: 4px
+				background-color: black
+
+
+	.testimonial-grid
+		justify-content: center
+
+	.preview
+		&-block
+			text-align: center
+	
+	.buttons
+		justify-content: center
+	
+	.container
+		&_preview
+			padding-bottom: 80px
+	
+	.promotion
+		&-grid
+			flex-direction: column
+		&-block
+			flex-align: center
+
+@media (max-width: nth($mediaBp, 3))
+	.buttons
+		flex-direction: column
+		align-items: center
+
+	.container
+		&_preview
+			padding-top: 165px
+
+	.preview
+		&-block
+			&__title
+				font-size: 26px
+			&__text
+				font-size: 15px
+
+	.promo
+		&-block 
+			text-align: center 
+			&__title
+				font-size: 18px
+			&__text
+				font-size: 14px	
+		&-grid
+			display: grid
+			grid-template-columns: repeat(2, 1fr)
+			align-items: center
+
+
+	.bg
+		&-block 
+			padding: 20px 0 50px
+			&__title
+				font-size: 18px
+			&__text
+				font-size: 14px
+				line-height: 1.5em
+		&-grid 
+			justify-content: center 
+
+
+	.testimonial
+		&-block 
+			height: 380px
+			padding-bottom: 50px 
+		&__title
+			padding-top: 20px
+			font-size: 22px
+		&-grid 
+			justify-content: center 
+			&__col 
+				padding-bottom: 10px
+		&-items
+			&__speechBubble
+				font-size: 14px
+			&-avatar	
+				&__person 
+					font-size: 14px
+				
+	.startYourTrial
+		&__title
+			font-size: 24px
+		&__text
+			font-size: 18px
+	.trial
+		&-block 
+			padding-top: 60px
+			padding-bottom: 60px
+			&__title
+				font-size: 24px
+			&__text
+				font-size: 15px
+				line-height: 1.5em
+
+	.footer
+		&-items
+			align-items: center
+		&-grid 
+			flex-direction: column
+			&__col
+				text-align: center
+		&__rights
+			margin-top: 50px
+			margin-bottom: 30px
+			font-size: 13px
+			margin-left: 0
+			position: relative
+		&__item 
+			&-title 
+				font-size: 15px
+			&__text
+				font-size: 14px
+		&__subscribe-form
+			width: 305px		
+
+	.subscribe-form
+		@include flex ($fw: wrap, $jc: center, $ai: center, $fd: column)
+		&__input
+			min-width: 100%
+
+@media (max-width: nth($mediaBp, 4))
+	.promo
+		&-grid
+			display: inline-block
+		&-block
+			&__img
+				width: 50%
+				position: relative
+				margin: 0 auto
